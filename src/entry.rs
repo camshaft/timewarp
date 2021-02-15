@@ -27,7 +27,7 @@ pub trait Storage<E: Entry>: Default + AsRef<[Stack<E>]> + AsMut<[Stack<E>]> {
 
     #[inline(always)]
     fn is_empty(&self) -> bool {
-        self.as_ref().iter().fold(true, |acc, s| acc & s.is_empty())
+        self.as_ref().iter().all(|s| s.is_empty())
     }
 
     #[inline(always)]
