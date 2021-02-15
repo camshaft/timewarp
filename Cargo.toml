@@ -1,0 +1,18 @@
+[package]
+name = "timewarp"
+version = "0.1.0"
+authors = ["Cameron Bytheway <bytheway.cameron@gmail.com>"]
+edition = "2018"
+
+[features]
+default = ["atomic-entry"]
+alloc = []
+atomic-entry = ["alloc", "futures", "intrusive-collections"]
+
+[dependencies]
+arr_macro = "0.1"
+futures = { version = "0.3", optional = true }
+intrusive-collections = { version = "0.9", optional = true }
+
+[dev-dependencies]
+bolero = "0.6"
